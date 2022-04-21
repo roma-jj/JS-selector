@@ -1,0 +1,54 @@
+Task: Create a custom select menu
+
+
+The original browser <select> element has a limited customization capability,
+and this problem can be solved by creating the structure of customizable elements above it.
+
+Create reusable custom select components using vanilla JS
+(without using any web frameworks like Angular, Vue, or libraries like React and jQuery)
+The modern ES syntax can be used (assuming that it will be used with polyfills)
+
+Arguments for initialization:
+
+- selector - the pointer to the wrapper element for the original <select> element with options.
+The original <select> element should be hidden from the user
+
+- configuration object with classes for the main elements of the component
+
+
+Component methods:
+
+getValue() - should return the selected value
+
+setValue(value) - should set the selector's currently selected value
+
+onChange(callback) - register the function that should be executed on selected value change
+
+
+example component usage:
+
+javascript
+
+const customSelect = new CustomSelect(selector, settings)
+
+// ...
+
+// get selected value to provide it further into the form
+
+const selectedValue = customSelect.getValue()
+
+// ...
+
+// set selected value programmatically
+
+customSelect.setValue('option1')
+
+// ...
+
+// execute some function every time when value changes
+
+customSelect.onChange(() => {...})
+
+
+Add the simple default styles for this component
+and provide the HTML page with this component usage examples
