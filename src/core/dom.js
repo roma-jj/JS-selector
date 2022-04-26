@@ -43,10 +43,13 @@ export function $(selector) {
     return new Dom(selector);
 }
 
-$.create = (tagName, classes = '') => {
+$.create = (tagName, classes = '', key) => {
     const el = document.createElement(tagName);
     if (classes) {
         el.classList.add(classes);
+    }
+    if (key) {
+        el.id = key;
     }
     return $(el);
 };
